@@ -9,26 +9,51 @@ import { CertificationRequestsTable } from './CertificationRequestsTable';
 import { useSelector } from 'react-redux';
 import { getUserOffchain } from '../../features/users/selectors';
 import { useTranslation } from 'react-i18next';
-import { useLinks } from '../../utils';
+import { useDevicePermissions, useLinks } from '../../utils';
 import { OriginConfigurationContext } from '..';
 import { RoleChangedModal } from '../Modal/RoleChangedModal';
 import { ConnectBlockchainAccountModal } from '../Modal/ConnectBlockchainAccountModal';
+import { Requirements } from '../Requirements';
 
 function CertificateDetailViewId(id: number) {
     return <CertificateDetailView id={id} />;
 }
 
 function InboxCertificates() {
+    const { canCreateDevice } = useDevicePermissions();
+
+    if (!canCreateDevice?.value) {
+        return <Requirements />;
+    }
     return <CertificateTable selectedState={SelectedState.Inbox} />;
 }
 
 function ClaimedCertificates() {
+    const { canCreateDevice } = useDevicePermissions();
+
+    if (!canCreateDevice?.value) {
+        return <Requirements />;
+    }
     return <CertificateTable selectedState={SelectedState.Claimed} hiddenColumns={['source']} />;
 }
 
-const PendingCertificationRequestsTable = () => <CertificationRequestsTable approved={false} />;
+function PendingCertificationRequestsTable() {
+    const { canCreateDevice } = useDevicePermissions();
 
-const ApprovedCertificationRequestsTable = () => <CertificationRequestsTable approved={true} />;
+    if (!canCreateDevice?.value) {
+        return <Requirements />;
+    }
+    return <CertificationRequestsTable approved={false} />;
+}
+
+function ApprovedCertificationRequestsTable() {
+    const { canCreateDevice } = useDevicePermissions();
+
+    if (!canCreateDevice?.value) {
+        return <Requirements />;
+    }
+    return <CertificationRequestsTable approved={true} />;
+}
 
 export function Certificates() {
     const user = useSelector(getUserOffchain);

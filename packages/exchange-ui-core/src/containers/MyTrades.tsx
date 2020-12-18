@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Grid } from '@material-ui/core';
-import { useTranslation, useIntervalFetch } from '@energyweb/origin-ui-core';
+import { useTranslation, useIntervalFetch, useDevicePermissions } from '@energyweb/origin-ui-core';
 import { getExchangeClient } from '../features/general';
 import { ITradeDTO } from '../utils/exchange';
 import { Trades } from '../components/trades';
+import { Requirements } from '@energyweb/origin-ui-core/dist/src/components/Requirements';
 
 interface IProps {
     currency: string;
@@ -12,6 +13,12 @@ interface IProps {
 }
 
 export function MyTrades(props: IProps) {
+    const { canCreateDevice } = useDevicePermissions();
+
+    if (!canCreateDevice?.value) {
+        return <Requirements />;
+    }
+
     const { currency, refreshInterval } = { refreshInterval: 10000, ...props };
 
     const exchangeClient = useSelector(getExchangeClient);
