@@ -45,6 +45,13 @@ describe('Certification Request tests', () => {
         await app.close();
     });
 
+    it('should return 400 BadRequest if "to" address is invalid', async () => {
+        await request(app.getHttpServer())
+            .post('/certification-request')
+            .send({ ...certificationRequestTestData, to: 'invalid one' })
+            .expect(HttpStatus.BAD_REQUEST);
+    });
+
     it('should create a certification request + entry in the DB', async () => {
         await request(app.getHttpServer())
             .post('/certification-request')
