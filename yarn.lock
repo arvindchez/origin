@@ -3846,6 +3846,16 @@
     tslib "2.0.3"
     uuid "8.3.2"
 
+"@nestjs/common@7.6.4":
+  version "7.6.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.6.4.tgz#eabb92cc7f910a0d0d008b62eab57b7e93cef1dc"
+  integrity sha512-hpMqn26ec6sjmWmXoiOksWi3wzAn6laF1qNhb3PSikRpaafjzba1m+/vABdAqZ8JOrcrN6gQs5IjtwyzhTurzQ==
+  dependencies:
+    axios "0.21.0"
+    iterare "1.2.1"
+    tslib "2.0.3"
+    uuid "8.3.2"
+
 "@nestjs/config@0.6.1", "@nestjs/config@^0.6.0":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-0.6.1.tgz#26e4bfd4b2f9d3a6b6bed6445a2a1e766abdf1c6"
@@ -3862,6 +3872,19 @@
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.6.3.tgz#0b3c3518b6ec5e2ca3d5751820d4142639e3c24f"
   integrity sha512-sOtIcuEYoj0PXhF/aULIXAUS5SW9wYLGkIAtkk8DMjW2CJJkCuAPIQk7LIqAS6tRDnXTluexnQ6artolVd/iDg==
+  dependencies:
+    "@nuxtjs/opencollective" "0.3.2"
+    fast-safe-stringify "2.0.7"
+    iterare "1.2.1"
+    object-hash "2.0.3"
+    path-to-regexp "3.2.0"
+    tslib "2.0.3"
+    uuid "8.3.2"
+
+"@nestjs/core@7.6.4":
+  version "7.6.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.6.4.tgz#90f9f1aec7bc5abc3b3eb477277c3bd8bdd25d3e"
+  integrity sha512-lKLlrWKf5Uo9wLH7vyrOvLYnhlfva7jlXsbevaQWKGQxp0N9F+eScvpWXv3xB2BTrFKmgBz2Z7h5KS/DWVteng==
   dependencies:
     "@nuxtjs/opencollective" "0.3.2"
     fast-safe-stringify "2.0.7"
@@ -4034,10 +4057,26 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@openapitools/openapi-generator-cli@1.0.18-4.3.1":
-  version "1.0.18-4.3.1"
-  resolved "https://registry.yarnpkg.com/@openapitools/openapi-generator-cli/-/openapi-generator-cli-1.0.18-4.3.1.tgz#77aa30f7d2eb6c46050f92ff3d1710da9fb77709"
-  integrity sha512-t5OFeIfbD5bUQH3/5xoCHr96ay9nIKPgtlkN9YrX7Ce4q8NdSUU/bl83MJjzU8qcdDiwZtuUgqTM2Y4FLOi9CA==
+"@openapitools/openapi-generator-cli@2.1.13":
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/@openapitools/openapi-generator-cli/-/openapi-generator-cli-2.1.13.tgz#04bcbbc2c28f93cde1036ffc66f6fb3c3949bbc6"
+  integrity sha512-XZELTyPA00QHNVRqnr2jr7T5yUCCTVnwDQaaS8aNc1yR6Fr9aFD/odZB9wWi1Bcod04wO1RVVy9zNlBAE8/JaQ==
+  dependencies:
+    "@nestjs/common" "7.6.4"
+    "@nestjs/core" "7.6.4"
+    "@nuxtjs/opencollective" "0.3.2"
+    chalk "4.1.0"
+    commander "6.2.1"
+    compare-versions "3.6.0"
+    concurrently "5.3.0"
+    console.table "0.10.0"
+    fs-extra "9.0.1"
+    glob "7.1.6"
+    inquirer "7.3.3"
+    lodash "4.17.20"
+    reflect-metadata "0.1.13"
+    rxjs "6.6.3"
+    tslib "2.0.3"
 
 "@openzeppelin/cli@2.8.2":
   version "2.8.2"
@@ -8519,6 +8558,14 @@ chalk@3.0.0, chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chalk@4.1.0, chalk@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
+  integrity sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -8534,14 +8581,6 @@ chalk@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.0.0.tgz#6e98081ed2d17faab615eb52ac66ec1fe6209e72"
   integrity sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
-chalk@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
-  integrity sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
@@ -9180,7 +9219,7 @@ compare-func@^1.3.1:
     array-ify "^1.0.0"
     dot-prop "^3.0.0"
 
-compare-versions@^3.6.0:
+compare-versions@3.6.0, compare-versions@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
   integrity sha512-W6Af2Iw1z4CB7q4uU4hv646dW9GQuBM+YpC0UvUCWSD8w90SJjp+ujJuXaEMtAXBtSqGfMPuFOVn4/+FlaqfBA==
@@ -9308,6 +9347,13 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
+
+console.table@0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/console.table/-/console.table-0.10.0.tgz#0917025588875befd70cf2eff4bef2c6e2d75d04"
+  integrity sha1-CRcCVYiHW+/XDPLv9L7yxuLXXQQ=
+  dependencies:
+    easy-table "1.1.0"
 
 constantinople@^3.0.1, constantinople@^3.1.2:
   version "3.1.2"
@@ -10646,6 +10692,13 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
+
+easy-table@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/easy-table/-/easy-table-1.1.0.tgz#86f9ab4c102f0371b7297b92a651d5824bc8cb73"
+  integrity sha1-hvmrTBAvA3G3KXuSplHVgkvIy3M=
+  optionalDependencies:
+    wcwidth ">=1.0.1"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -24899,7 +24952,7 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-wcwidth@^1.0.0, wcwidth@^1.0.1:
+wcwidth@>=1.0.1, wcwidth@^1.0.0, wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
   integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
